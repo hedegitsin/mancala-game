@@ -1,0 +1,7 @@
+<div
+  class="pit"
+  [ngClass]="{'big-pit': pit.type === PitType.BIG, 'active': isCurrentPlayer}"
+  (click)="makeMove()"
+>
+  {{pit.stones}}
+</div>

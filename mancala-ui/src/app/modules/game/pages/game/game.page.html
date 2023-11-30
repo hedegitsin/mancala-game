@@ -1,0 +1,42 @@
+<div class="container">
+
+  <ng-container [ngSwitch]="!!game">
+    <ng-container *ngSwitchCase="false">
+      <div class="flex justify-center align-middle w-1/4">
+        <form [formGroup]="gameForm" (ngSubmit)="startGame()" class="w-full">
+          <div class="flex flex-col gap-6 w-full">
+            <div class="game-name">
+              mancala
+            </div>
+            <input
+              type="text"
+              formControlName="playerOne"
+              class="block flex-1 border rounded-md"
+              placeholder="Player One Name"
+            >
+
+            <input
+              type="text"
+              formControlName="playerTwo"
+              class="block flex-1 border rounded-md"
+              placeholder="Player Two Name"
+            >
+
+            <button
+              type="submit"
+              class="bg-indigo-700 text-white rounded-md p-4"
+            >
+              Start Game!
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </ng-container>
+    <ng-container *ngSwitchCase="true">
+      <app-game-in-progress [game]="game!"></app-game-in-progress>
+    </ng-container>
+  </ng-container>
+</div>
+
+

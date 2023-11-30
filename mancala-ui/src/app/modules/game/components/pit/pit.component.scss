@@ -1,0 +1,52 @@
+
+@mixin styles-for-pit {
+  @apply rounded-lg;
+  @apply flex;
+  @apply aspect-square;
+  @apply justify-center;
+  @apply items-center;
+  @apply ring-0;
+  @apply transition-all;
+  @apply text-4xl;
+  @apply text-white;
+}
+
+@mixin styles-for-active-pit {
+  @include styles-for-pit;
+
+  @apply bg-indigo-200;
+
+  &:not(.big-pit) {
+    @apply hover:bg-indigo-300;
+    cursor: pointer;
+  }
+}
+
+@mixin styles-for-inactive-pit {
+  @include styles-for-pit;
+  @apply bg-gray-200;
+
+}
+
+.pit {
+  width: 100%;
+  text-align: center;
+
+  @include styles-for-pit;
+
+  &.active {
+    @include styles-for-active-pit;
+  }
+
+  &:not(.active) {
+    @include styles-for-inactive-pit;
+  }
+
+
+
+  &.big-pit {
+    width: 200px;
+    height: 100%;
+  }
+}
+

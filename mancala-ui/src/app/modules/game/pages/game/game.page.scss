@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.container {
+  @apply pt-12;
+  @apply flex;
+  @apply w-full;
+  @apply justify-center;
+  @apply items-center;
+  @apply h-full;
+  min-height: 100vh;
+
+  & .game-name {
+    font-family: Caveat, serif;
+    font-weight: 700;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+}
